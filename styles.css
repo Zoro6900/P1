@@ -19,7 +19,7 @@ header {
 /* Основные категории */
 .category-grid {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 15px;
     padding: 20px;
