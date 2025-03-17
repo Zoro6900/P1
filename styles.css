@@ -30,7 +30,7 @@ header {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 255, 136, 0.3);
-    width: 30%;
+    width: 40%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-left: 5px solid #00ff88;
 }
@@ -90,8 +90,8 @@ footer {
 
 /* 1️⃣ Мобильные устройства (до 480px) */
 @media (max-width: 480px) {
-    body { font-size: 14px; }
-    header { padding: 50px 15px; font-size: 20px; }
+    body { font-size: 13px; }
+    header { padding: 40px 15px; font-size: 15px; }
     .category-grid { grid-template-columns: 1fr; }
     .category { padding: 15px; }
     footer { font-size: 14px; }
@@ -118,5 +118,4 @@ footer {
     header { font-size: 32px; padding: 100px; }
     .category { font-size: 20px; padding: 40px; }
     footer { font-size: 22px; }
-}
 }
