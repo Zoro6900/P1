@@ -1,52 +1,36 @@
 /* Общие стили */
 body {
-    background-color: #1a1a1a;
-    background: url('Hpotka.jpg') center/cover no-repeat;
+    background: url('./photo.jpg') center/cover no-repeat fixed;
     color: white;
     font-family: 'Arial', sans-serif;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     text-align: center;
 }
 
 /* Шапка */
 header {
-    background: linear-gradient(135deg, #00ff88, #008855);
+    background: linear-gradient(135deg, #006d42, #008855); /* Темно-зеленый градиент */
     color: white;
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-/* Основные категории (фон) */
-#categories {
-    padding: 40px 20px;
-    border-radius: 10px;
     position: relative;
+    z-index: 10;
 }
 
-/* Затемнение фона */
-#categories::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
+/* Затемнение фона для лучшей читаемости */
+main {
+    background: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    margin: 0 auto;
 }
 
-/* Контент поверх затемнения */
-#categories h2, .category {
-    position: relative;
-    z-index: 2;
-}
-
-/* Карточки */
+/* Основные категории */
 .category-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Более оптимизированная сетка */
     gap: 15px;
     padding: 20px;
 }
@@ -56,104 +40,89 @@ header {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 255, 136, 0.3);
-    width: 40%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-left: 5px solid #00ff88;
-    color: white;
 }
 
-/* Ховер-эффект */
 .category:hover {
     transform: translateY(-5px);
     box-shadow: 0px 6px 10px rgba(0, 255, 136, 0.6);
 }
 
-.usage {
-    font-size: 14px;
-    color: #00ff88;
-    font-weight: bold;
-}
-
-/* Блок с мифами */
-.myth {
-    background: #222;
-    padding: 15px;
-    margin: 15px auto;
-    border-left: 5px solid #ff4d4d;
-    width: 80%;
-    text-align: left;
-    box-shadow: 0px 4px 6px rgba(255, 77, 77, 0.3);
-}
-
-.myth strong {
-    color: #00ff88;
-}
-
-/* Частые вопросы */
-details {
-    background: #222;
-    margin: 10px auto;
-    padding: 10px;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 255, 136, 0.3);
-}
-
-summary {
-    font-weight: bold;
-    cursor: pointer;
-    color: #00ff88;
-}
-
-/* Подвал */
-footer {
-    background-color: #111;
-    color: white;
-    padding: 50px;
-    font-size: 18px;
-}
-
-/* 📱 Адаптация для мобильных устройств */
+/* Для мобильных устройств (до 480px) */
 @media (max-width: 480px) {
     header {
-        padding: 30px 15px; /* Уменьшаем шапку */
+        padding: 40px 10px;
+        font-size: 16px; /* Уменьшенный шрифт */
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr; /* Все карточки в один столбик */
+        gap: 10px; /* Уменьшенный промежуток между карточками */
+    }
+
+    .category {
+        padding: 15px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+/* Для планшетов (481px – 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 50px 20px;
         font-size: 18px;
     }
 
     .category-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Две колонки вместо одной */
-        gap: 10px;
+        grid-template-columns: repeat(2, 1fr); /* Два столбика на планшетах */
+    }
+
+    footer {
+        font-size: 16px;
+    }
+}
+
+/* Для ноутбуков и десктопов (1025px – 1440px) */
+@media (max-width: 1440px) {
+    body {
+        max-width: 1200px;
+    }
+
+    header {
+        font-size: 26px;
+        padding: 80px 20px;
     }
 
     .category {
-        width: 100%;
-        padding: 10px;
-        font-size: 12px;
+        font-size: 18px;
+    }
+
+    footer {
+        font-size: 18px;
     }
 }
 
-
-/* 2️⃣ Планшеты (481px – 768px) */
-@media (max-width: 768px) {
-    header { font-size: 22px; padding: 60px; }
-    .category-grid { grid-template-columns: repeat(2, 1fr); }
-    footer { font-size: 16px; padding: 40px; }
-}
-
-/* 3️⃣ Ноутбуки и десктопы (1025px – 1440px) */
-@media (max-width: 1440px) {
-    body { max-width: 1200px; }
-    header { font-size: 26px; padding: 80px; }
-    .category { font-size: 18px; }
-    footer { font-size: 18px; }
-}
-
-/* 4️⃣ Большие мониторы (1441px+) */
+/* Для больших мониторов (1441px и больше) */
 @media (min-width: 1441px) {
-    body { max-width: 3000px; }
-    header { font-size: 32px; padding: 100px; }
-    .category { font-size: 20px; padding: 40px; }
-    footer { font-size: 22px; }
+    body {
+        max-width: 3000px;
+    }
+
+    header {
+        font-size: 32px;
+        padding: 100px 20px;
+    }
+
+    .category {
+        font-size: 20px;
+        padding: 40px;
+    }
+
+    footer {
+        font-size: 22px;
+    }
 }
