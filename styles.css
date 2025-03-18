@@ -1,6 +1,7 @@
 /* Общие стили */
 body {
-    background: url('Hpotka.jpg') center/cover no-repeat;
+    background-color: #1a1a1a;
+    background: url('Hpotka.jpg') center/cover no-repeat fixed;
     color: white;
     font-family: 'Arial', sans-serif;
     margin: 0 auto;
