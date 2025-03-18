@@ -1,5 +1,6 @@
 /* Общие стили */
 body {
+    background: url('Hpotka.jpg') center/cover no-repeat;
     background-color: #1a1a1a;
     color: white;
     font-family: 'Arial', sans-serif;
